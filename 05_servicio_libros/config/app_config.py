@@ -9,7 +9,7 @@ dbconfig = {
 }
 
 connection_pool = pooling.MySQLConnectionPool(
-    pool_name="alumnos_pool",
+    pool_name="libros_pool",
     pool_size=5,
     **dbconfig
 )

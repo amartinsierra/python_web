@@ -9,12 +9,14 @@ class LibrosService:
     def buscar_libro(self,isbn:int):
         libro=self.repo.find_by_isbn(isbn)
         if libro:
-            return Libro(isbn=libro["isbn"],
+            """return Libro(isbn=libro["isbn"],
                          titulo=libro["titulo"],
                          autor=libro["autor"],
                          precio=libro["precio"],
                          paginas=libro["paginas"],
                          idTema=libro["idTema"])
+                         """
+            return Libro(**libro)
         return None
     def eliminar_libro(self,isbn:int):
         self.repo.delete_by_isbn(isbn)
