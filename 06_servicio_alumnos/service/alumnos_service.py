@@ -4,7 +4,7 @@ class AlumnoService:
     alumno_repository=AlumnoRepository()    
     def alta_alumno(self,alumno:Alumno):
         #no puede haber alumnos con mismo email
-        if self.existe_alumno(alumno.email):
+        if self.existe_alumno(alumno.email,alumno.curso):
             return False
         else:
             self.alumno_repository.save(alumno)
